@@ -13,6 +13,17 @@ module.exports = function(environment) {
       }
     },
 
+    //todo change it in future config
+    contentSecurityPolicy: {
+      'default-src': "'self' 'unsafe-eval' 'unsafe-inline' *",
+      'script-src': " 'self' 'unsafe-eval' 'unsafe-inline' *.net *.com ",
+      'font-src': " 'unsafe-eval' *.net *.com",
+      'connect-src': "'self' 'unsafe-eval' 'unsafe-inline' *",
+      'img-src': " 'self' 'unsafe-eval' 'unsafe-inline' *com *.net *",
+      'style-src': " 'self' 'unsafe-eval' 'unsafe-inline' *.net *com *",
+      'frame-src': "none"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

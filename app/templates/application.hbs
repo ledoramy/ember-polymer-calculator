@@ -1,3 +1,13 @@
-<h2 id="title">Welcome to Ember.js</h2>
+{{#poly-component tagName='core-toolbar' elementId='main-header'}}
+   {{poly-component tagName='paper-icon-button' elementId='navi-icon' attributeProperties='icon' icon='polymer'}}
+   <div flex>cl</div>
+{{/poly-component}}
 
-{{outlet}}
+{{poly-component
+    tagName = 'paper-calculator-output'
+    attributeProperties = 'expression result error'
+    expression = outputExpression
+    result = outputResult
+    error = outputError
+}}
+
