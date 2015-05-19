@@ -3,8 +3,13 @@
  */
 import Ember from 'ember';
 
-export default Ember.View.extend({
+export default Ember.View.extend(Ember.ViewTargetActionSupport, {
   tagName: 'core-header-panel',
   attributeBindings: ['flex'],
-  flex: true
+  flex: true,
+
+  keyUp: function() {
+    console.log('button pressed');
+    this.triggerAction({action: 'incResult'});
+  }
 });

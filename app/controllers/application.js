@@ -7,5 +7,9 @@ export default Ember.Controller.extend({
 
   outputExpression: '10+10',
   outputResult: 20,
-  outputError: 'error'
+  outputError: 'error',
+
+  actions: {
+
+  }
 });
