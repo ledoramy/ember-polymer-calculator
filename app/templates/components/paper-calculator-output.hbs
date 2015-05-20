@@ -95,8 +95,20 @@
 
         Polymer('paper-calculator-output', {
             attributeChanged: function(attrName, oldVal, newVal) {
+                console.log(attrName + ' oldValue: '+ oldVal + ' newVal: ' + newVal);
+
+                var outputClassList = this.shadowRoot.querySelector('.output').classList;
                 if(attrName == 'result' && newVal) {
-                    this.shadowRoot.querySelector('.output').classList.add('show-result');
+                    outputClassList.add('show-result');
+                }
+                if(attrName == 'result' && newVal == '') {
+                    outputClassList.remove('show-result');
+                }
+                if(attrName == 'error' && newVal) {
+                    outputClassList.add('error');
+                }
+                if(attrName == 'error' && newVal == '') {
+                    outputClassList.remove('error');
                 }
             }
         });

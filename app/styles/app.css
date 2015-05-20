@@ -19,3 +19,39 @@ core-toolbar {
 #output {
   box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
 }
+
+#panelContainer {
+  position: absolute;
+  background-color: #4c4c4c;
+  font-weight: 300;
+  font-size: 2em;
+  color: #fff;
+  top: 38%;
+  height: 62%;
+  bottom: 0;
+  width: 100%;
+}
+
+#panelContainer > div:nth-of-type(4) {
+  background-color: #666;
+  border-left: 1px solid #444;
+}
+
+#resultInk {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #73daeb;
+  -webkit-transform: translateZ(0) scale(0);
+  transform: translateZ(0) scale(0);
+}
+
+#resultInk.error {
+  background-color: #f50057;
+}
+
+#resultInk.spill {
+  -webkit-transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
+  -webkit-transition: -webkit-transform 0.38s ease-out;
+  transition: transform 0.38s ease-out;
+}

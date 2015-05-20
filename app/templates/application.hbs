@@ -3,6 +3,8 @@
    <div flex>cl</div>
 {{/poly-component}}
 
+<div id="resultInk"></div>
+
 {{poly-component
     tagName = 'paper-calculator-output'
     elementId = 'output'
@@ -11,4 +13,23 @@
     result = outputResult
     error = outputError
 }}
+
+<div id="panelContainer" horizontal layout>
+  {{#each col in standardKeys}}
+      <div flex vertical layout center>
+        {{#each l in col}}
+            <div flex relative layout vertical center-center style="width: 100%;height:100%">
+              {{poly-component
+                tagName='paper-calculator-key'
+                id = l
+                attributeProperties='label'
+                label=l
+                onTap="{{keyTap}}"
+                onEventBindings='button-tapped:buttonTapped'
+                style='height:100%'}}
+            </div>
+        {{/each}}
+      </div>
+  {{/each}}
+</div>
 
